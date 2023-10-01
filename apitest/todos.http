@@ -1,0 +1,19 @@
+### GET todos
+GET http://localhost:3000/api/v1/todos
+
+### POST todos
+POST http://localhost:3000/api/v1/todos
+
+{
+    "content": "todo 4"
+}
+
+###  UPDATE todo
+PATCH http://localhost:3000/api/v1/todos/cln4qmhjn0001hhmqrqi34dov
+
+{
+    "content": "todo 2 updated"
+}
+
+###  DELETE todo
+DELETE http://localhost:3000/api/v1/todos/cln4sxiof0003hhz0rqi426k0
