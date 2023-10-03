@@ -15,11 +15,11 @@ export async function POST(req) {
       },
     });
     return NextResponse.json(
-      { message: "Member created succesfuly" },
+      { data: createMember, message: "Member created succesfuly" },
       { status: 201 }
     );
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: "ERROR" }, { status: 500 });
+    return NextResponse.json({ error }, { status: 500 });
   }
 }

@@ -14,7 +14,7 @@ export async function POST(req) {
 
     // check if user exist
     if (!findUser) {
-      return NextResponse.json({ message: "User not found" });
+      return NextResponse.json({ error: "User not found" });
     }
 
     // compare password
@@ -22,7 +22,7 @@ export async function POST(req) {
     const isPasswordValid = await bcrypt.compare(password, hashedPassword);
 
     if (!isPasswordValid) {
-      return NextResponse.json({ message: "Invalid Password" });
+      return NextResponse.json({ error: "Invalid Password" });
     }
 
     const payload = {
@@ -34,6 +34,6 @@ export async function POST(req) {
     return NextResponse.json({ data: payload });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: "ERROR" }, { status: 500 });
+    return NextResponse.json({ error }, { status: 500 });
   }
 }
